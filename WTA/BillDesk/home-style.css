@@ -1,0 +1,16 @@
+h1{
+	background-image: url("header-image.png");
+	text-align: center;
+	font-size: 45px;	
+}
+h2{
+	text-align: center;
+	font-family: impact
+	font-size: 30px;
+	text-align: center;
+}
+.about{
+	background-image: url("home-background.jpg");
+	text-align: center;
+	font-size: 30px
+}
