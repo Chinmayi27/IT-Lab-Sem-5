@@ -1,0 +1,45 @@
+CREATE DATABASE COMPANY;
+
+USE COMPANY;
+
+CREATE TABLE EMPLOYEE ( Fname varchar(255) NOT NULL,
+						Minit char(1) NOT NULL,
+						Lname varchar(255) NOT NULL,
+						Ssn varchar(9) NOT NULL,
+						Bdate date,
+						Address varchar(255),
+						Sex varchar(1),
+						Salary int,
+						Super_ssn varchar(9),
+						Dno int,
+						PRIMARY KEY(Ssn));
+
+CREATE TABLE DEPARTMENT( Dname varchar(255) NOT NULL,
+						 Dnumber int NOT NULL,
+						 Mgr_ssn varchar(9) NOT NULL,
+						 Mgr_start_date date,
+						 PRIMARY KEY(Dnumber),
+						 FOREIGN KEY(Mgr_ssn) REFERENCES EMPLOYEE(Ssn));
+
+CREATE TABLE  DEPT_LOCATIONS( Dnumber int NOT NULL,
+							  Dlocation varchar(255),
+							  FOREIGN KEY(Dnumber) REFERENCES DEPARTMENT(Dnumber));
+
+CREATE TABLE PROJECT( Pname varchar(9),
+					  Pnumber int NOT NULL,
+					  Plocation varchar(255),
+					  Dnum int,
+					  PRIMARY KEY(Pnumber));
+
+
+CREATE TABLE WORKS_ON( Essn varchar(9) NOT NULL,
+					   Pno int NOT NULL,
+					   Hours decimal(3,1),
+					   FOREIGN KEY(Pno) REFERENCES PROJECT(Pnumber));
+
+CREATE TABLE DEPENDENT( Essn varchar(9) NOT NULL,
+					    Dependent_name varchar(255) NOT NULL,
+					    Sex char(1),
+					    Bdate date,
+					    Relationship varchar(255),
+					    FOREIGN KEY(Essn) REFERENCES EMPLOYEE(Ssn));
