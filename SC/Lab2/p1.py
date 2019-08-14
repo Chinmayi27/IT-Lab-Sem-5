@@ -50,6 +50,7 @@ def predict(test, myWeights, threshold):
 	return predict
 
 def getAccuracy(predicted_values, test):
+	print(len(test))
 	total = 0
 	for i in range(len(test)):
 		total = total + int(not test[i][0]==predicted_values[i])
@@ -85,20 +86,20 @@ def trainPerceptron(myWeights, max_iterations, train, learning_rate, threshold):
 
 def main():
 	print('Single perceptron implementation from scratch')
-	filename = "IRIS.csv"
+	filename = "SPECTF.csv"
 	records = readCSV(filename)
 
-	fold_size = int(len(records)/10)
+	fold_size = int(len(records)/10)+1
 	accuracy = []
-	max_iterations = 200
+	max_iterations = 500
 	weights = intializeWeights(records)
 	learning_rate = 0.1
-	threshold = 4
+	threshold = 5
 	for i in range(0,len(records),fold_size):
 		#getting train and test data
 		train, test = getTrainandTest(i, fold_size, records)
 		myWeights = copy.deepcopy(weights)
-
+		print(myWeights)
 		trainPerceptron(myWeights, max_iterations, train, learning_rate, threshold)
 		predicted_values = predict(test, myWeights, threshold)
 		accuracy.append(getAccuracy(predicted_values, test))
