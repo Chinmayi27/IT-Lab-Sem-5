@@ -100,6 +100,8 @@ def main():
 	print('Accuracy over 10 folds(rounded to 4 decimal places):')
 	for i in accuracy:
 		print("%.4f" % i)
+
+	print('Avg accuracy: '+str(sum(accuracy)/len(accuracy)))
 if __name__ == '__main__':
 	main()
 
