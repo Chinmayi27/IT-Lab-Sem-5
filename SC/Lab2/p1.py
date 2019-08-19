@@ -1,6 +1,7 @@
 import csv
 import random 
 import copy
+from random import shuffle
 
 def getTrainandTest(pos, fold_size, records):
 	test = records[pos:pos+fold_size]
@@ -78,7 +79,7 @@ def trainPerceptron(myWeights, max_iterations, train, learning_rate, threshold):
 				pred = 1
 
 			updateWeights(myWeights, row, pred, learning_rate, int(not row[0]=='Iris-setosa'))
-		if(iter%20==0):
+		if(iter%100==0):
 			print(myWeights)
 		iter = iter+1
 
@@ -86,15 +87,16 @@ def trainPerceptron(myWeights, max_iterations, train, learning_rate, threshold):
 
 def main():
 	print('Single perceptron implementation from scratch')
-	filename = "SPECTF.csv"
+	filename = "SPECT.csv"
 	records = readCSV(filename)
+	shuffle(records)
 
-	fold_size = int(len(records)/10)+1
+	fold_size = int(len(records)/10)
 	accuracy = []
-	max_iterations = 500
+	max_iterations = 10000
 	weights = intializeWeights(records)
-	learning_rate = 0.1
-	threshold = 5
+	learning_rate = 0.00001
+	threshold = 0
 	for i in range(0,len(records),fold_size):
 		#getting train and test data
 		train, test = getTrainandTest(i, fold_size, records)
