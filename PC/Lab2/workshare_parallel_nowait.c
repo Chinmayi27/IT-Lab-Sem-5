@@ -10,13 +10,13 @@ int main(){
     #pragma omp parallel num_threads(2) shared(n, a, b, d, c), private(i, j)
     {
 
-        #pragma parallel for nowait reduction(+:a)
+        #pragma parallel for nowait schedule(guided,100)
         for(i=0; i<n;i++)
         {
             a+=1;
         }
      
-        #pragma parallel for nowait reduction(+:b)
+        #pragma parallel for nowait schedule(guided, 100)
         for(j=0; j<n;j++)
         {
             b+=1;

@@ -6,14 +6,11 @@ int main(){
     int n=100000;
     int a[n], b[n];
 
-   // for(i=0;i<n;i++)
-   //  a[i]=i;
-    //int b[n];
     double start_time = omp_get_wtime();
 
     for(i=0; i<n;i++)
     {
-        b[i]=(a[i])/2;
+        a[i]+=1;
     }
     
         

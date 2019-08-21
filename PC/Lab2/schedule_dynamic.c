@@ -8,14 +8,14 @@ int main(){
 
    // for(i=0;i<n;i++)
    //  a[i]=i;
-    int b[n];
+    //int b[n];
     double start_time = omp_get_wtime();
-    #pragma omp parallel num_threads(1000)
+    #pragma omp parallel 
     {
-        #pragma omp for schedule(dynamic,1000)
+        #pragma omp for nowait schedule(dynamic,100)
         for(i=0; i<n;i++)
         {
-            b[i]=(a[i])/2;
+            a[i]+=1;
         }
      }
         

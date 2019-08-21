@@ -6,16 +6,13 @@ int main(){
     int n=100000;
     int a[n];
 
-   // for(i=0;i<n;i++)
-   //  a[i]=i;
-    int b[n];
     double start_time = omp_get_wtime();
-    #pragma omp parallel num_threads(1000)
+    #pragma omp parallel
     {
-        #pragma omp for schedule(dynamic,1000)
+        #pragma omp for nowait schedule(static,100)
         for(i=0; i<n;i++)
         {
-            b[i]=(a[i])/2;
+            a[i]+=1;
         }
      }
         
