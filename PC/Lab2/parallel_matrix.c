@@ -30,5 +30,5 @@ int main(){
 	}
 	
 	
-	printf("Time taken parallely: %lf\n", omp_get_wtime()-startime);
+	printf("Matrix multiplication, Time taken parallely: %lf\n", omp_get_wtime()-startime);
 }

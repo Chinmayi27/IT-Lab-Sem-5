@@ -5,15 +5,72 @@
 </head>
 <link rel="stylesheet" type="text/css" href="home-style.css">
 <style>
-	
+body {
+	background: #e8f4f8
+}
 </style>
+
+<script type="text/javascript">
+	function validateForm() {
+	 /* var uname = document.forms["login"]["uname"].value;*/
+	 var un= document.getElementById("uname");
+	  if (un.value == "") {
+	    alert("Name must be filled out");
+	    return false;
+	  }
+	
+
+	 var password = document.getElementById("passwd");
+	  if(password.value.length < 7 ){
+	  	alert("Passcode length must be atleast 6 characters")
+	  	return false;
+	}
+} 
+
+</script>
+
 <body>
 <h1>BILL DESK</h1>
 <h2>Fast. Easy. Secure.</h2>
 <marquee>Welcome to Bangalore Bill Desk, your one stop source for managing all your bills.</marquee>
-<div>
-	<h2>About</h2>
-	<p>An free online portal<br>where you can manage <br>all your billing requirements</p>
+<div class = 'split about left'>
+	<div class = 'transbox'>
+		<h3 style='text-align: center;'>About</h3>
+		<p>An free online portal where you can manage all your billing requirements. Easy to use, simple and completely safe.</p>
+		<p>Payment services offered for: </p>
+		<ul style="text-align: left">
+			<li>Water</li>
+			<li>Electricity</li>
+			<li>Gas</li>
+			<li>Landline</li>
+		</ul>
+	</div>
+</div>
+
+<div class="split sign-up right">
+	<h2>Login</h2>
+	<img src="user.png" alt="User logo" height=30% style="padding-left: 215px" >
+	<form name="login" onsubmit="validateForm()" class="transbox-left" style="padding-left: 200px; margin: auto;">
+			<label for="uname" form="login"><b>Username</b></label>
+		    <input type="text" placeholder="Enter Username" name="uname" id="uname">
+
+		    <br>
+		    
+		    <label for="psw" form="login"><b>Password</b></label>
+		    <input type="password" placeholder="Enter Password" name="psw" id="passwd" >
+		    
+		    <br>
+		    
+		    <button class = "button" type="submit" style="align-items: center;">Login</button>
+		    <label form="login">
+		      <input type="checkbox" checked="checked" name="remember"> Remember me
+		    </label>
+		    
+		    <br>
+		    
+		    <button class = "button" style="align-items: center;">Sign-up</button>
+	</form>
+	
 </div>
 
 </body>
