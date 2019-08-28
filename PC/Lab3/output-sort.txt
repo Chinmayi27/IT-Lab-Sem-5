@@ -1,0 +1,2 @@
+Time taken(serially): 0.116447
+Time taken (parallely) : 0.00796503

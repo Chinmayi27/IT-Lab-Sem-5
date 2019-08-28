@@ -1,0 +1,6 @@
+Fib(40) = 102334155
+Time taken (serially): 1.10016
+Fib(40) = 533537
+Time taken (using task directive): 0.000621645
+Fib(40) = 102334155
+Time taken (using task + taskwait directive): 1.07298
