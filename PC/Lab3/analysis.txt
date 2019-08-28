@@ -1,0 +1,9 @@
+Analysis:
+1)
+- From the first question, I understood that using of taskwait ensures that the answer is correct, otherwise simply using task causes the values to get modified randomly and gives wrong answer if we don't wait for the threads to join. Using task wait does slow down the process but ensures correctness.
+- Also, for n<20 I used serial approach because the excess overhead results in the program taking up more time.
+
+
+2)
+- I used taskwait for this because my vector array was being passed around as a reference which is implicitly defined as firstprivate which raised a compilation error with task.
+- Here I used a large array to see the effect of parallelism which could overcome the overhead issue.   

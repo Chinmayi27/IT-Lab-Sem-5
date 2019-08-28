@@ -11,6 +11,7 @@ body {
 </style>
 
 <script type="text/javascript">
+
 	function validateForm() {
 	 /* var uname = document.forms["login"]["uname"].value;*/
 	 var un= document.getElementById("uname");
@@ -24,6 +25,11 @@ body {
 	  if(password.value.length < 7 ){
 	  	alert("Passcode length must be atleast 6 characters")
 	  	return false;
+		}
+
+	else{
+		alert("Successful Registration!")
+      return true;
 	}
 } 
 
