@@ -4,13 +4,14 @@
 %} 
   
 %%
-[0-9][ ]*([+\-*/][ ]*[0-9][ ]*)*[\n] {
-	printf("\nArithmetic expression %s", yytext);
-	break;
+[0-9][ ]*([+\-*/\%]+[ ]*[0-9][ ]*)*[\n] {
+	printf("Arithmetic expression\n");
+	return;
 	
 } 
-.[\n] {
-	printf("\nNot an arithmetic expression");
+.*[\n] {
+	printf("Not an arithmetic expression\n");
+	return;
 } 
  
 %% 
@@ -19,7 +20,7 @@ int yywrap(){} ;
   
 #include<string.h>
 main() { 
-	printf("Enter a sentence: \n");  
+	printf("Enter an expression: \n");  
 	yylex(); 
  	printf("\n"); 
 } 

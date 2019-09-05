@@ -4,7 +4,7 @@
 %} 
   
 %% 
-[a-zA-Z]*["ab"][ 	.]+ {
+[a-zA-Z]*["ab"][ 	\n.]+ {
 	printf("%s\n", yytext); 
   counter = counter+1;
 }
@@ -27,7 +27,7 @@ main() {
 	fp = fopen(filename,"r"); 
 	yyin = fp; 
 	yylex(); 
-	printf("Words ending with tab: %d",counter); 
+	printf("Words ending with ab: %d",counter); 
  	printf("\n"); 
 } 
 

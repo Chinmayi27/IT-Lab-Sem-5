@@ -384,28 +384,27 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[14] =
+static yyconst flex_int16_t yy_accept[9] =
     {   0,
-        0,    0,    5,    2,    3,    2,    2,    2,    1,    0,
-        0,    0,    0
+        0,    0,    5,    2,    3,    1,    1,    0
     } ;
 
 static yyconst YY_CHAR yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    1,    4,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    2,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        1,    1,    1,    1,    1,    1,    6,    6,    5,    5,
+        1,    1,    1,    1,    1,    1,    1,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    1,    1,    1,
+        1,    1,    1,    1,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
 
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    1,    1,    1,    1,    1,    1,    1,    1,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -422,33 +421,29 @@ static yyconst YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst YY_CHAR yy_meta[7] =
+static yyconst YY_CHAR yy_meta[4] =
     {   0,
-        1,    2,    1,    1,    1,    1
+        1,    1,    2
     } ;
 
-static yyconst flex_uint16_t yy_base[15] =
+static yyconst flex_uint16_t yy_base[10] =
     {   0,
-        0,    0,   12,   13,   13,    0,    3,    9,    0,    0,
-        0,    0,   13,    8
+        0,    0,    5,    6,    6,    0,    0,    6,    2
     } ;
 
-static yyconst flex_int16_t yy_def[15] =
+static yyconst flex_int16_t yy_def[10] =
     {   0,
-       13,    1,   13,   13,   13,   14,   13,    7,   14,   14,
-        7,    8,    0,   13
+        8,    1,    8,    8,    8,    9,    9,    0,    8
     } ;
 
-static yyconst flex_uint16_t yy_nxt[20] =
+static yyconst flex_uint16_t yy_nxt[10] =
     {   0,
-        4,    4,    5,    6,    7,    8,   10,   11,   12,    9,
-        9,   13,    3,   13,   13,   13,   13,   13,   13
+        4,    5,    6,    7,    8,    3,    8,    8,    8
     } ;
 
-static yyconst flex_int16_t yy_chk[20] =
+static yyconst flex_int16_t yy_chk[10] =
     {   0,
-        1,    1,    1,    1,    1,    1,    7,    7,    7,   14,
-        8,    3,   13,   13,   13,   13,   13,   13,   13
+        1,    1,    1,    9,    3,    8,    8,    8,    8
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -465,11 +460,15 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "p8.l"
-#line 2 "p8.l"
-  int counter = 0;
-  char *longest;
-#line 473 "lex.yy.c"
+#line 1 "p9.l"
+#line 2 "p9.l"
+	#include<string.h>
+	char filename[50];
+	char find_word[50];
+	char replace_word[50];
+	FILE *fp, *fp2;
+  
+#line 472 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -687,9 +686,9 @@ YY_DECL
 		}
 
 	{
-#line 6 "p8.l"
+#line 10 "p9.l"
 
-#line 693 "lex.yy.c"
+#line 692 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -716,13 +715,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 14 )
+				if ( yy_current_state >= 9 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 13 );
+		while ( yy_base[yy_current_state] != 6 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -748,33 +747,39 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "p8.l"
+#line 11 "p9.l"
 {
-	printf("%s\n", yytext); 
-  counter = counter+1;
-}
+	if(strcmp(yytext, find_word)==0)
+	fprintf(fp2, replace_word);
+
+	else{
+		fprintf(fp2, yytext);
+	}
+	
+} 
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "p8.l"
+#line 20 "p9.l"
 {
-	;
-}
+	fprintf(fp2, yytext);
+} 
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 14 "p8.l"
+#line 23 "p9.l"
 {
-	;
-}
+	
+	fprintf(fp2, "\n");;
+} 
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 17 "p8.l"
+#line 27 "p9.l"
 ECHO;
 	YY_BREAK
-#line 778 "lex.yy.c"
+#line 783 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1067,7 +1072,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 14 )
+			if ( yy_current_state >= 9 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1095,11 +1100,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 14 )
+		if ( yy_current_state >= 9 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 13);
+	yy_is_jam = (yy_current_state == 8);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1775,23 +1780,28 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 17 "p8.l"
+#line 27 "p9.l"
 
 
 
 int yywrap(){} ;
-
   
+#include<string.h>
 main() { 
-	FILE *fp; 
-	char filename[50]; 
 	printf("Enter the filename: \n"); 
 	scanf("%s",filename); 
-	fp = fopen(filename,"r"); 
-	yyin = fp; 
-	yylex(); 
-	printf("Words ending with tab: %d",counter); 
- 	printf("\n"); 
-} 
+	fp = fopen(filename,"r");
+	yyin = fp;
+	
+	fp2 = fopen("output.txt", "w+"); 
 
+
+	printf("Enter word to find: \n"); 
+	scanf("%s",find_word);
+	printf("Enter word to replace: \n"); 
+	scanf("%s",replace_word);
+
+	yylex(); 
+ 	printf("File successfully altered, output in output.txt\n"); 
+} 
 
