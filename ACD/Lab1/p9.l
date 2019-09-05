@@ -15,13 +15,13 @@
 	else{
 		fprintf(fp2, yytext);
 	}
-	printf("1");
+	
 } 
 . {
 	fprintf(fp2, yytext);
 } 
 \n {
-	printf("2");
+	
 	fprintf(fp2, "\n");;
 } 
 %% 
@@ -35,7 +35,7 @@ main() {
 	fp = fopen(filename,"r");
 	yyin = fp;
 	
-	fp2 = fopen("op.txt", "w+"); 
+	fp2 = fopen("output.txt", "w+"); 
 
 
 	printf("Enter word to find: \n"); 
@@ -44,5 +44,5 @@ main() {
 	scanf("%s",replace_word);
 
 	yylex(); 
- 	printf("File successfully altered\n"); 
+ 	printf("File successfully altered, output in output.txt\n"); 
 } 
