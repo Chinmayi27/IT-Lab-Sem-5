@@ -68,11 +68,22 @@ def getPredictions(probability_matrix, test, y_probabilities):
 	return predicted_values
 
 def getAccuracy(predicted_values, test):
-	correct = 0
+	tp = 0
+	fp = 0
+	fn = 0
+	tn = 0
 	for i in range(len(test)):
 		#print(predicted_values[i], test[i][0], type(predicted_values[i]), type(test[i][0]))
-		if(predicted_values[i] == test[i][0]):
-			correct = correct+1
+		if(predicted_values[i] == '1' and test[i][0]=='1'):
+			tp = tp+1
 
-	#print(correct)
-	return float(correct/len(test))
+		elif(predicted_values[i] == '1' and test[i][0]=='0'):
+			fp = fp+1
+
+		elif(predicted_values[i] == '0' and test[i][0]=='1'):
+			fn = fn+1
+
+		else:
+			tn  = tn+1
+		
+	return float((tp+tn)/len(test)), float(tp/(tp+fp)), float(tp/(tp+fn))
