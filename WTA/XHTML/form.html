@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script type="text/javascript">
+	function show_feedback() {
+		var name = document.getElementById("fname").value;
+		var city = document.getElementById("city").value;
+		var comments = document.getElementById("comments").value;
+		var gender;
+		if( document.getElementById("male").checked == true)
+			gender = "male";
+
+		if ( document.getElementById("female").checked == true)
+			gender = "female";
+
+		if ( document.getElementById("other").checked == true)
+			gender = "other";
+
+		document.getElementById("show_feedback").innerHTML = comments.concat(" -Submitted by ").concat(name).concat(", ").concat(gender).concat(" from ").concat(city);	
+	}
+</script>
+<head>
+  <title>Feedback Form</title>
+</head>
+
+<body>
+<h1>Feedback Form</h1>
+<form name="Feedback form">
+	Name    : <input type="text" name="name" id="fname"/	>
+	</br>
+	City    : <input type="text" name="city" id="city"/>
+	</br>
+	Gender  : 
+	<input type="radio" name="gender" id="male">Male</input>
+	<input type="radio" name="gender" id="female">Female</input>
+	<input type="radio" name="gender" id="other">Other</input>
+	</br>
+	Comments : <input type="text" name="comments" id="comments">
+	</br>
+</form>
+<button name="submit_btn" onclick="show_feedback()" id="submit_btn">Submit</button>
+</br>
+<p>Feedback Submitted: </p>
+<p id="show_feedback"></p>
+</body>
+
+</html>

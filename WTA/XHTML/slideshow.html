@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script type="text/javascript">
+	var images = new Array();
+	images[0] = new Image();
+	images[0].src = 'https://www.fujifilmusa.com/products/digital_cameras/x/fujifilm_x20/sample_images/img/index/ff_x20_008.JPG';
+
+	images[1] = new Image();
+	images[1].src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2mi1kiS-qfPhqswjhvcwc1SNuGPvFYd5wO1fXutdcvWg72O22";
+
+	images[2] = new Image();
+	images[2].src = "https://4.img-dpreview.com/files/p/E~TS590x0~articles/3925134721/0266554465.jpeg";
+
+	function nextImage(){
+		var pos = 0;
+		var img = document.getElementById("slide").src;
+		
+		for(var i=0; i<images.length; i++){
+			if(images[i].src == img){
+				pos = (i+1)%images.length;
+				break;
+			}
+		}
+
+		document.getElementById("slide").src = images[pos].src;
+	}
+
+	function previousImage(){
+		var pos = 0;
+		var img = document.getElementById("slide").src;
+		
+		for(var i=0; i<images.length; i++){
+			if(images[i].src == img){
+				if(i==0)
+					pos = images.length-1;
+				else
+					pos = (i-1);//%images.length;
+				break;
+			}
+		}
+
+		document.getElementById("slide").src = images[pos].src;
+	}
+</script>
+<head>
+	<title>Slide Show</title>
+</head>
+<body>
+	<h1>Awesome Images</h1>
+	<img id="slide" src="https://www.fujifilmusa.com/products/digital_cameras/x/fujifilm_x20/sample_images/img/index/ff_x20_008.JPG" width=50%>
+	</br>
+	<button onclick="previousImage()">Previous</button>
+	<button onclick="nextImage()">Next</button>
+</form>
+</body>
+</html>
