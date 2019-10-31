@@ -17,7 +17,7 @@ BEGIN
             LEAVE getEmployee;
         END IF;
         
-        SET employeeList = CONCAT(employee,";",employeeList);
+        SET employeeList = CONCAT(employee,", ",employeeList);
     END LOOP getEmployee;
     CLOSE currEmployee;
  
