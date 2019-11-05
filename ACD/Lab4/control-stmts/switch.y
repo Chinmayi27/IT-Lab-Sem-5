@@ -81,6 +81,11 @@ E    :    ID'='E
 
 #include"lex.yy.c"
 
+void yyerror (char const *s) {
+   fprintf (stderr, "%s\n", s);
+}
+
+
 main()
 {
     printf("\nEnter the expression: ");

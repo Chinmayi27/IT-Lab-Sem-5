@@ -10,7 +10,7 @@
 /* Rule Section */
 %% 
   
-[a-zA-Z]+   {yylval.f = yytext; return STR;} 
+[a-zA-Z0-9]+   {yylval.f = yytext; return STR;} 
 [-+()*/]    {return yytext[0];} 
 [ \t\n]      {;} 
   

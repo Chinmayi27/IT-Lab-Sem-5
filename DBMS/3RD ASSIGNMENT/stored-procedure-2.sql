@@ -38,3 +38,6 @@ BEGIN
  
 END //
 Delimiter ;
+
+CALL update_salary();
+select * from EMPLOYEE;

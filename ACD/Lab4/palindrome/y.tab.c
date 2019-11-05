@@ -94,10 +94,7 @@
 # define YYERROR_VERBOSE 0
 #endif
 
-/* In a future release of Bison, this section will be replaced
-   by #include "y.tab.h".  */
-#ifndef YY_YY_Y_TAB_H_INCLUDED
-# define YY_YY_Y_TAB_H_INCLUDED
+
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -126,7 +123,7 @@ union YYSTYPE
  
 	char* f; 
 
-#line 130 "y.tab.c" /* yacc.c:355  */
+#line 127 "y.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -139,11 +136,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_Y_TAB_H_INCLUDED  */
+
 
 /* Copy the second part of user declarations.  */
 
-#line 147 "y.tab.c" /* yacc.c:358  */
+#line 144 "y.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1236,17 +1233,17 @@ yyreduce:
 
 		} 
 	}
-#line 1240 "y.tab.c" /* yacc.c:1646  */
+#line 1237 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
 #line 57 "palindrome.y" /* yacc.c:1646  */
     {(yyval.f) = (yyvsp[0].f);}
-#line 1246 "y.tab.c" /* yacc.c:1646  */
+#line 1243 "y.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1250 "y.tab.c" /* yacc.c:1646  */
+#line 1247 "y.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
